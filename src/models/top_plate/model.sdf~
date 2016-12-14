@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+    <model name="top_plate">
+        <link name="top_plate">
+            <pose>0.0 0.0 0.245 0 0 0 </pose>
+            <inertial>
+                <mass>0.050</mass>
+		<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+            <visual name="visual">
+            <geometry>
+                <mesh>
+                    <uri>model://top_plate/meshes/top_plate.dae</uri>
+                    <scale>1 1 1</scale>
+                </mesh>
+            </geometry>
+            </visual>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://top_plate/meshes/top_plate.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+ <!-- Adding limit to Collision-->
+            <axis>
+                <limit>
+                    <lower>-0.4</lower>
+                    <upper>0.4</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </link>
+    </model>
+</sdf>

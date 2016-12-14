@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version='1.0'>
+    <model name="test_box">
+        <link name="test_box">
+            <pose>0.0 0.0 0.0 0 0 0 </pose>
+            <inertial>
+                <mass>0.50</mass>
+		<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+            <visual name="visual">
+            <geometry>
+                <mesh>
+                    <uri>model://test_box/meshes/test_box.dae</uri>
+                    <scale>0.01 0.01 0.01</scale>
+                </mesh>
+            </geometry>
+            </visual>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://test_box/meshes/test_box.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+    </model>
+</sdf>

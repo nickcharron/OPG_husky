@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- global light source -->
+       <include>
+        <uri>model://sun</uri>
+      </include>
+ 
+    <!-- ground plane -->
+    <model name="grass">
+        <include>
+            <uri>model://grass</uri>
+        </include>
+    </model>
+
+    <!-- Husky Configuration-->
+    <!-- Notes:
+	- Husky height to rails: 0.245m
+	- Height to top of plate: 0.265m (2cm thickness)
+	- Radius of Tire: 0.17775m
+	- Thickness of camera:  
+								-->
+    <model name="husky_customized">
+       <pose>0 0 0.17775 0 0 0</pose>
+
+        <include>
+            <uri>model://husky</uri>
+            <pose>0 0 0 0 0 0</pose>
+        </include>
+
+        <!-- Top Plate -->
+        <include>
+            <uri>model://top_plate</uri>
+            <pose>0 0 0 0 0 0</pose>
+        </include>
+        
+        <!-- horizontal laser -->
+        <include>
+            <uri>model://hokuyo_horizontal</uri>
+            <pose>0.16 0 0.3 0 0 0</pose>
+        </include>
+
+        <!-- vertical laser -->
+        <include>
+            <uri>model://hokuyo_vertical</uri>
+            <pose>0.05 0 0.5 3.1415926 1.570796 0</pose>
+        </include> 
+
+        <!-- Sensor mount with 3 GoPro Cameras -->
+        <include>
+            <uri>model://mount</uri>
+            <pose>0.25 -0.295 0.17775 0 0 0</pose>
+        </include>
+
+        <static>true</static>
+
+    </model>
+       
+
+  </world>
+</sdf>
